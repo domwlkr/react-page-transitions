@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header'
-import '../App.css';
+import './MainLayout.css';
 
 class MainLayout extends Component {
     render () {
         return (
             <div className="App">
                 <Header />
-                <main>
+                <main className="main">
                     {this.props.children}
                 </main>
             </div>
