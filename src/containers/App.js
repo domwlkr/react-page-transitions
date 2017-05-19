@@ -5,11 +5,11 @@ import { Route, Switch } from 'react-router';
 import Header from '../components/Header';
 import Home from './Home';
 import About from './About';
+import Test from './Test';
 
-import './MainLayout.css';
-import './Page.css';
+import './App.css';
 
-class MainLayout extends Component {
+class App extends Component {
     render () {
         return (
             <div className="App">
@@ -18,15 +18,18 @@ class MainLayout extends Component {
                     <Route render={({location, history, match}) => {
                         return (
                             <RouteTransition
+                                className="page-wrapper"
                                 pathname={this.props.location.pathname}
                                 atEnter={{ translateX: 100 }}
-                                atLeave={{ translateX: -100 }}
+                                atLeave={{ translateX: 100 }}
                                 atActive={{ translateX: 0 }}
+                                runOnMount={false}
                                 mapStyles={styles => ({ transform: `translateX(${styles.translateX}%)` })}
                                 >
                                 <Switch key={location.key} location={location}>
                                     <Route exact path="/" component={Home} />
                                     <Route exact path="/about/" component={About}/>
+                                    <Route exact path="/test/" component={Test}/>
                                 </Switch>
                             </RouteTransition>
                         );
@@ -37,4 +40,4 @@ class MainLayout extends Component {
     }
 }
 
-export default MainLayout;
+export default App;

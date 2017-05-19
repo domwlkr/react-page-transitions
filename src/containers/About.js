@@ -5,7 +5,7 @@ import './About.css';
 class About extends Component {
     render () {
         return (
-            <div key="about" className="page about">
+            <div className="page about" style={this.props.style}>
                 <h2>About!</h2>
             </div>
         );

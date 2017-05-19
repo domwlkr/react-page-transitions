@@ -5,7 +5,7 @@ import './Home.css';
 class Home extends Component {
     render () {
         return (
-            <div className="page home">
+            <div className="page home" style={this.props.style}>
                 <h2>Home!</h2>
             </div>
         );
