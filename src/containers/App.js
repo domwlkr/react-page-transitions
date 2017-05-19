@@ -14,6 +14,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
+                
                 <main className="main">
                     <Route render={({location, history, match}) => {
                         return (
