@@ -14,7 +14,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                
+
                 <main className="main">
                     <Route render={({location, history, match}) => {
                         return (
@@ -22,7 +22,7 @@ class App extends Component {
                                 className="page-wrapper"
                                 pathname={this.props.location.pathname}
                                 atEnter={{ translateX: 100 }}
-                                atLeave={{ translateX: 100 }}
+                                atLeave={{ translateX: -100 }}
                                 atActive={{ translateX: 0 }}
                                 runOnMount={false}
                                 mapStyles={styles => ({ transform: `translateX(${styles.translateX}%)` })}
